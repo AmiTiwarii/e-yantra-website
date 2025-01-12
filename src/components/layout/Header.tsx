@@ -26,7 +26,7 @@ export default function Header() {
                 <span className="text-xl font-bold text-white">eYantra</span>
               </a> */}
               <div className='w-14 h-14'>
-                <a href="https://e-yantra.vercel.app"><img src="/images/eyantralogo1.png" alt="eyantra logo" /></a>
+                <a href="https://e-yantra-one.vercel.app"><img src="/images/eyantralogo1.png" alt="eyantra logo" /></a>
               </div>
               <div className='w-1 h-12 bg-white'></div>
               <div className=''>
