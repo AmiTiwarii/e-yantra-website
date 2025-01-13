@@ -67,6 +67,7 @@ const projects = [
 import { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import NET from 'vanta/dist/vanta.net.min';
+import {motion} from 'framer-motion'
 
 type VantaEffect = {
   destroy: () => void;
@@ -143,16 +144,24 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8"> 
           {filteredProjects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white/90 backdrop-blur-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+              initial={{ opacity: 0, y: -100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeIn"
+              }}
+              className="bg-white/90 backdrop-blur-sm rounded-lg overflow-hidden shadow-md hover:shadow-lg hover:shadow-blue-400 hover:-translate-y-5 transition-shadow"
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-48 object-cover hover:scale-110"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -170,7 +179,7 @@ export default function Projects() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const images: string[] = [
     "/images/image1.png",
@@ -13,6 +14,7 @@ const images: string[] = [
 
 const ImageCarousel: React.FC = () => {
     return (
+        <Link to={"/gallery"}>
         <div className="w-full p-5 overflow-hidden">
             <div className="relative w-full">
                 <div className="flex animate-looping">
@@ -39,6 +41,7 @@ const ImageCarousel: React.FC = () => {
                 </div>
             </div>
         </div>
+        </Link>
     );
 };
 

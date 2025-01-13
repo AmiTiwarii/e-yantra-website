@@ -9,6 +9,7 @@ export default function Header() {
     { name: 'Projects', href: '/projects' },
     { name: 'Mentors', href: '/mentors' },
     { name: 'Resources', href: '/resources' },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Contact', href: '/contact' },
   ];
 

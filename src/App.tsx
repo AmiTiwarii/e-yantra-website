@@ -8,6 +8,7 @@ import Contact from './components/sections/Contact';
 import Footer from './components/sections/Footer';
 import Home from "./components/sections/Home"
 import Mentors from "./components/sections/Mentors"
+import Gallery from './components/sections/Gallery';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path="/resources" element={<Resources />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/mentors" element={<Mentors />} />
+              <Route path="/gallery" element={<Gallery />} />
             </Routes>
           <Footer/>
         </main>

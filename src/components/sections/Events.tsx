@@ -2,6 +2,7 @@ import  { useEffect, useRef, useState } from 'react';
 import { Calendar, MapPin, Clock } from 'lucide-react';
 import * as THREE from 'three';
 import RINGS from 'vanta/dist/vanta.rings.min';
+import { span } from 'framer-motion/client';
 
 const events = [
   {
@@ -80,13 +81,17 @@ export default function Events() {
             <div
               key={index}
               className={`rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow bg-white/90 backdrop-blur-sm ${
-                event.status === 'upcoming' ? 'border-2 border-blue-600' : ''
+                event.status === 'upcoming' ? 'border-2 border-blue-600' : 'border-2 border-green-400'
               }`}
             >
               <div className="p-6">
-                {event.status === 'upcoming' && (
+                {event.status === 'upcoming' ? (
                   <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm rounded-full mb-4">
                     Upcoming
+                  </span>
+                ):(
+                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm rounded-full mb-4">
+                    Completed
                   </span>
                 )}
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">

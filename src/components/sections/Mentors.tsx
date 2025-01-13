@@ -17,18 +17,11 @@ const teamMembers = [
     interests: 'Machine Learning, Automation',
   },
   {
-    name: 'Dr. Kirubanantham',
+    name: 'Dr. Bakkialakshmi V S',
     role: 'Assistant Professor',
-    email: 'kirubanp2@srmist.edu.in',
-    image: 'https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/04/Kirubanantham.jpg',
-    interests: 'IoT, Embedded Systems',
-  },
-  {
-    name: 'Dr. C. AshokKumar',
-    role: 'Assistant Professor',
-    email: 'ashokkuc@srmist.edu.in',
-    image: 'https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/04/Ashok-Kumar.jpg',
-    interests: 'IoT, Embedded Systems',
+    email: 'bakkialv@srmist.edu.in',
+    image: 'https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/04/Bakkialakshmi.jpg',
+    interests: 'Affective Computing, Machine Learning, Deep Learning',
   },
   {
     name: 'Dr. M. Suganiya',

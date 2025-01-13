@@ -90,3 +90,20 @@ declare module 'vanta/dist/vanta.net.min' {
   };
   export default NET;
 }
+declare module 'vanta/dist/vanta.clouds.min' {
+  const CLOUDS: {
+    (options: {
+      el: HTMLElement | null;
+      THREE: any;
+      mouseControls?: boolean;
+      touchControls?: boolean;
+      gyroControls?: boolean;
+      minHeight?: number;
+      minWidth?: number;
+      [key: string]: any;
+    }): {
+      destroy: () => void;
+    };
+  };
+  export default CLOUDS;
+}

@@ -8,8 +8,8 @@ function Home() {
   return (
     <div className="w-full h-full">
         <HeroSection/>
-        <About/>
         <Events/>
+        <About/>
         <Highlights/>
     </div>
   )

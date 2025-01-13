@@ -46,7 +46,7 @@ export default function About() {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-gray-100">
+    <section className="relative w-full h-screen overflow-hidden bg-gray-100 pt-8">
       {/* Carousel Wrapper */}
       <div
         className="flex transition-transform duration-700 ease-in-out"
@@ -60,11 +60,11 @@ export default function About() {
             className="relative w-full flex-shrink-0 h-full flex flex-col items-center justify-center"
           >
             <img
-              className=" w-full h-screen mx-auto opacity-80"
+              className=" w-auto h-screen mx-auto opacity-80"
               src={image}
               alt={alttext}
             />
-            <div className="absolute top-[28rem] left-40 w-[55rem] from-neutral-600 bg-gray-800 rounded-xl p-5 backdrop-blur-xl">
+            <div className="absolute top-[30rem] left-[15rem] w-[55rem] from-neutral-600 bg-transparent rounded-xl p-5 backdrop-blur-xl">
               <span className='text-transparent bg-red-700 bg-clip-text text-3xl'>e-yantra</span>
               <h3 className="text-2xl font-semibold text-blue-600">{text}</h3>
               <h4 className='text-xl text-white'>{description}</h4>
