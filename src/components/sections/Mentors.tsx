@@ -60,12 +60,12 @@ export default function About() {
                   className="w-96 h-full object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tl from-black/70 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center">
                     <p className="font-medium">{member.interests}</p>
                   </div>
                 </div>
               </div>
-              <div className="mt-4 text-center">
+              <div className="mt-4 text-center pr-12">
                 <h4 className="text-lg font-semibold text-gray-900">{member.name}</h4>
                 <p className="text-gray-600">{member.role}</p>
                 <p className="text-gray-600">{member.email}</p>

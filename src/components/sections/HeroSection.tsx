@@ -26,7 +26,7 @@ function HeroSection() {
                 <div className="max-w-4xl">
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-200 backdrop-blur-md border border-blue-400 text-black mb-6">
                         <Sparkles className="h-4 w-4 mr-2" />
-                        <span className="text-sm">Pioneering the Future of Robotics</span>
+                        <span className="text-sm">E Yantra SRM</span>
                     </div>
                     <h1 className="text-5xl md:text-7xl font-bold text-black mb-6 leading-tight">
                         Empowering Innovations in {" "}
