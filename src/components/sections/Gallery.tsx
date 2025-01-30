@@ -124,6 +124,21 @@ const events = [
       "/gallery/Eyantra Symposium 2024/IT (37).jpg",
     ],
   },
+  {
+    name: "Meta-Verse",
+    logo: "/gallery/MetaVerse/mv1.jpeg",
+    photos: [
+      "/gallery/MetaVerse/mv1.jpeg",
+      "/gallery/MetaVerse/mv2.jpeg",
+      "/gallery/MetaVerse/mv3.jpeg",
+      "/gallery/MetaVerse/mv4.jpeg",
+      "/gallery/MetaVerse/mv5.jpeg",
+      "/gallery/MetaVerse/mv6.jpeg",
+      "/gallery/MetaVerse/mv7.jpeg",
+      "/gallery/MetaVerse/mv8.jpeg",
+      "/gallery/MetaVerse/mv9.jpeg",
+    ],
+  },
 ];
 
 type VantaEffect = {
