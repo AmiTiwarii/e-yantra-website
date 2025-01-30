@@ -32,7 +32,7 @@ export default function About() {
       handleNext()
     }, 4000)
     return () => clearInterval(interval)
-  }, []) // Removed currentIndex from dependencies
+  }, [])
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % aboutus.length)
@@ -47,7 +47,7 @@ export default function About() {
   }
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-gray-100 pt-8">
+    <section className="relative w-full min-h-screen overflow-hidden bg-gray-200 pt-20 md:pt-8">
       {/* Carousel Wrapper */}
       <div
         className="flex transition-transform duration-700 ease-in-out"
@@ -56,14 +56,21 @@ export default function About() {
         }}
       >
         {aboutus.map(({ text, image, alttext, description }) => (
-          <div key={text} className="relative w-full flex-shrink-0 h-full flex flex-col items-center justify-center">
-            <img className="w-full h-full object-cover opacity-80" src={image || "/placeholder.svg"} alt={alttext} />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-full max-w-4xl mx-4 sm:mx-8 md:mx-16 lg:mx-auto from-neutral-600 bg-transparent rounded-xl p-4 sm:p-5 backdrop-blur-xl">
-                <span className="text-transparent bg-red-700 bg-clip-text text-2xl sm:text-3xl">e-yantra</span>
-                <h3 className="text-xl sm:text-2xl font-semibold text-blue-600 mt-2">{text}</h3>
-                <h4 className="text-base sm:text-lg md:text-xl text-white mt-2">{description}</h4>
-              </div>
+          <div
+            key={text}
+            className="relative w-full flex-shrink-0 h-full flex flex-col md:flex-row items-center justify-center px-4 md:px-0"
+          >
+            <img
+              className="w-full md:w-auto h-64 md:h-screen object-cover opacity-80"
+              src={image || "/placeholder.svg"}
+              alt={alttext}
+            />
+            <div className="w-full md:absolute md:inset-0 md:top-[30rem] md:left-[15rem] md:w-[55rem] bg-black/50 md:bg-transparent rounded-xl p-5 pt-0 backdrop-blur-lg flex flex-col justify-center mt-4 md:mt-0">
+              <span className="text-red-500 md:text-transparent md:bg-red-700 md:bg-clip-text text-2xl md:text-3xl font-bold">
+                e-yantra
+              </span>
+              <h3 className="text-xl md:text-2xl font-semibold text-white md:text-blue-600 mt-2">{text}</h3>
+              <p className="text-white md:text-white text-base md:text-xl mt-2">{description}</p>
             </div>
           </div>
         ))}
@@ -71,13 +78,13 @@ export default function About() {
 
       {/* Navigation Buttons */}
       <button
-        className="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 sm:p-3 rounded-full shadow-md hover:bg-gray-600"
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-600"
         onClick={handlePrev}
       >
         &lt;
       </button>
       <button
-        className="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 sm:p-3 rounded-full shadow-md hover:bg-gray-600"
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-600"
         onClick={handleNext}
       >
         &gt;
@@ -88,9 +95,7 @@ export default function About() {
         {aboutus.map((_, index) => (
           <div
             key={index}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
-              index === currentIndex ? "bg-blue-600" : "bg-gray-300"
-            } cursor-pointer`}
+            className={`w-3 h-3 rounded-full ${index === currentIndex ? "bg-blue-600" : "bg-gray-300"} cursor-pointer`}
             onClick={() => handleDotClick(index)}
           ></div>
         ))}

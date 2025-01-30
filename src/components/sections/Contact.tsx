@@ -1,33 +1,33 @@
-import { useState, useEffect, useRef } from 'react';
-import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
-import * as THREE from 'three';
-import GLOBE from 'vanta/dist/vanta.globe.min';
+import { useState, useEffect, useRef } from "react"
+import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react"
+import * as THREE from "three"
+import GLOBE from "vanta/dist/vanta.globe.min"
+import type React from "react" // Added import for React
 
 type VantaEffect = {
-  destroy: () => void;
-} | null;
+  destroy: () => void
+} | null
 
 // Custom X (Twitter) icon component
 interface XIconProps {
-  className?: string;
-  size: number;
+  className?: string
+  size: number
 }
 
 const XIcon: React.FC<XIconProps> = ({ className, size }) => (
-  <svg
-    viewBox="0 0 24 24"
-    width={size}
-    height={size}
-    className={className}
-    fill="currentColor"
-  >
+  <svg viewBox="0 0 24 24" width={size} height={size} className={className} fill="currentColor">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
-);
+)
 
 export default function Contact() {
-  const [vantaEffect, setVantaEffect] = useState<VantaEffect>(null);
-  const vantaRef = useRef<HTMLDivElement>(null);
+  const [vantaEffect, setVantaEffect] = useState<VantaEffect>(null)
+  const vantaRef = useRef<HTMLDivElement>(null)
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+  const [isSending, setIsSending] = useState(false)
+  const [sendStatus, setSendStatus] = useState<"success" | "error" | null>(null)
 
   useEffect(() => {
     if (!vantaEffect && vantaRef.current) {
@@ -38,86 +38,113 @@ export default function Contact() {
           mouseControls: true,
           touchControls: true,
           gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
           color2: 0x776eb3,
           size: 0.5,
-          backgroundColor: 0xe3e3e3
-        })
-      );
+          backgroundColor: 0xe3e3e3,
+        }),
+      )
     }
     return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
+      if (vantaEffect) vantaEffect.destroy()
+    }
+  }, [vantaEffect])
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSending(true)
+    setSendStatus(null)
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      })
+
+      if (response.ok) {
+        setSendStatus("success")
+        setName("")
+        setEmail("")
+        setMessage("")
+      } else {
+        setSendStatus("error")
+      }
+    } catch (error) {
+      setSendStatus("error")
+    } finally {
+      setIsSending(false)
+    }
+  }
 
   return (
-    <section 
-      ref={vantaRef}
-      id="contact" 
-      className="relative py-20 bg-[#e3e3e3]"
-    >
+    <section ref={vantaRef} id="contact" className="relative py-20 bg-[#e3e3e3]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Get in touch with us for collaborations, inquiries, or to learn more
-            about our research and innovations.
+            Get in touch with us for collaborations, inquiries, or to learn more about our research and innovations.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Name
                 </label>
                 <input
                   type="text"
                   id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   placeholder="Your name"
+                  required
                 />
               </div>
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   placeholder="your@email.com"
+                  required
                 />
               </div>
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                   Message
                 </label>
                 <textarea
                   id="message"
                   rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   placeholder="Your message"
+                  required
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                disabled={isSending}
+                className={`w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors ${isSending ? "opacity-50 cursor-not-allowed" : ""}`}
               >
-                Send Message
+                {isSending ? "Sending..." : "Send Message"}
               </button>
+              {sendStatus === "success" && <p className="text-green-600">Message sent successfully!</p>}
+              {sendStatus === "error" && <p className="text-red-600">Failed to send message. Please try again.</p>}
 
               {/* Social Media Links */}
               <div className="flex justify-center items-center space-x-8 pt-6">
@@ -159,9 +186,7 @@ export default function Contact() {
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Contact Information
-              </h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-blue-600" />
@@ -174,8 +199,10 @@ export default function Contact() {
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-blue-600" />
                   <span className="text-gray-600">
-                    SRM Institute of Science and Technology,<br />
-                    Kattankulathur, Chennai - 603203<br />
+                    SRM Institute of Science and Technology,
+                    <br />
+                    Kattankulathur, Chennai - 603203
+                    <br />
                     Tamil Nadu, India
                   </span>
                 </div>
@@ -196,5 +223,6 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  );
+  )
 }
+
