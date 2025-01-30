@@ -5,7 +5,7 @@ import Projects from './components/sections/Projects';
 import Events from './components/sections/Events';
 import Resources from './components/sections/Resources';
 import Contact from './components/sections/Contact';
-import Footer from './components/sections/Footer';
+import Footer from './components/layout/Footer';
 import Home from "./components/sections/Home"
 import Mentors from "./components/sections/Mentors"
 import Gallery from './components/sections/Gallery';

@@ -1,22 +1,19 @@
-
-
 function ImageCorousal1() {
   return (
-    <div className="w-full h-[720px] relative overflow-hidden pl-0">
-        <div className="flex flex-col animate-loopingUp will-change-transform">
-            <img className="w-[250px] h-[355px] object-cover rounded-[30px] m-[10px]" src="/images/eyantra 11.jpeg" alt="image 1"/>
-            <img className="w-[250px] h-[355px] object-cover rounded-[30px] m-[10px]" src="/images/eyantra 5.jpeg" alt="image 2"/>
-            <img className="w-[250px] h-[355px] object-cover rounded-[30px] m-[10px]" src="/images/eyantra 8.jpeg" alt="image 3"/>
-            <img className="w-[250px] h-[355px] object-cover rounded-[30px] m-[10px]" src="/images/eyantra 4.jpeg" alt="image 4"/>
-            <img className="w-[250px] h-[355px] object-cover rounded-[30px] m-[10px]" src="/images/eyantra 10.jpeg" alt="image 5"/>
-            <img className="w-[250px] h-[355px] object-cover rounded-[30px] m-[10px]" src="/images/eyantra 11.jpeg" alt="image 1"/>
-            <img className="w-[250px] h-[355px] object-cover rounded-[30px] m-[10px]" src="/images/eyantra 5.jpeg" alt="image 2"/>
-            <img className="w-[250px] h-[355px] object-cover rounded-[30px] m-[10px]" src="/images/eyantra 8.jpeg" alt="image 3"/>
-            <img className="w-[250px] h-[355px] object-cover rounded-[30px] m-[10px]" src="/images/eyantra 14.jpeg" alt="image 4"/>
-            <img className="w-[250px] h-[355px] object-cover rounded-[30px] m-[10px]" src="/images/eyantra 10.jpeg" alt="image 5"/>
-        </div>
+    <div className="w-full h-full relative overflow-hidden">
+      <div className="flex flex-col animate-loopingUp will-change-transform">
+        {[11, 5, 8, 4, 10, 11, 5, 8, 14, 10].map((num, index) => (
+          <img
+            key={index}
+            className="w-full h-[30vh] md:h-[35vh] lg:h-[40vh] object-cover rounded-[30px] mb-4"
+            src={`/images/eyantra ${num}.jpeg`}
+            alt={`image ${index + 1}`}
+          />
+        ))}
+      </div>
     </div>
   )
 }
 
 export default ImageCorousal1
+
