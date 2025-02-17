@@ -8,10 +8,10 @@ const projects = [
   },
   {
     title: '4 wheel Line follower using Raspberry Pi',
-    category: 'Ongoing',
+    category: 'Completed',
     image: 'https://images.unsplash.com/photo-1629739884942-8678d138dd64?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmFzcGJlcnJ5JTIwcGl8ZW58MHx8MHx8fDA%3D',
     description: 'Dr.J.Kalaivani and Dr.V.Angayarkanni',
-    tags: ['Ongoing'],
+    tags: ['Completed'],
   },
   {
     title: 'Automated Attendance and Access Control System',
@@ -22,10 +22,10 @@ const projects = [
   },
   {
     title: 'Smart Parking system',
-    category: 'Ongoing',
+    category: 'Completed',
     image: 'https://plus.unsplash.com/premium_photo-1661902046698-40bba703f396?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGFya2luZ3xlbnwwfHwwfHx8MA%3D%3D',
     description: 'Dr.V.Angayarkanni',
-    tags: ['Ongoing'],
+    tags: ['Completed'],
   },
   {
     title: 'Light Automation System with Voice Assistant',
@@ -36,30 +36,51 @@ const projects = [
   },
   {
     title: 'Developing a smart mirror with an integrated face recognition system	',
-    category: 'Ongoing',
+    category: 'Completed',
     image: 'https://images.unsplash.com/photo-1595428774752-c87f23e7fcee?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c21hcnQlMjBtaXJyb3J8ZW58MHx8MHx8fDA%3D',
     description: 'Dr.M.Suganiya',
-    tags: ['Ongoing'],
+    tags: ['Completed'],
   },
   {
     title: 'RFID Door Access Control',
-    category: 'Ongoing',
+    category: 'Completed',
     image: 'https://plus.unsplash.com/premium_photo-1682339355038-e70c038fcf52?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHJmaWR8ZW58MHx8MHx8fDA%3D',
     description: 'Dr.P.Kirubanandham',
-    tags: ['Ongoing'],
+    tags: ['Completed'],
   },
   {
     title: 'Microprocessor Component Detector',
     category: 'Completed',
     image: 'https://images.unsplash.com/photo-1648245612493-8f2354470029?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1pY3JvcHJvY2Vzc29yfGVufDB8fDB8fHww',
     description: 'Dr.P.Kirubanandham	',
-    tags: ['Ongoing'],
+    tags: ['Completed'],
   },
   {
     title: 'Security system with Raspberry Pi cameras and motion detectors.',
     category: 'Completed',
     image: 'https://images.unsplash.com/photo-1549109926-58f039549485?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2VjdXJpdHklMjBjYW1lcmF8ZW58MHx8MHx8fDA%3D',
     description: 'Dr.C.Ashok kumar',
+    tags: ['Completed'],
+  },
+  {
+    title: 'RescueTWIN is an advanced search-and-rescue rover designed to locate victims in disaster zones such as earthquake debris or collapsed buildings.',
+    category: 'Ongoing',
+    image: '/images/RescueTwin.png',
+    description: 'Dr.R.I.Minu and Dr.V.Angayarkanni',
+    tags: ['Ongoing'],
+  },
+  {
+    title: 'AFFORDABLE PROSTHETIC SOLUTION FOR ARM AMPUTEES.',
+    category: 'Ongoing',
+    image: '/images/Empowering Mangament.png',
+    description: 'Dr.V.Angayarkanni',
+    tags: ['Ongoing'],
+  },
+  {
+    title: 'HaloHUD is a next-gen smart helmet designed for riders, integrating a transparent AMOLED HUD display and Bluetooth connectivity for seamless real-time navigation, notifications, and safety alerts.',
+    category: 'Ongoing',
+    image: '/images/HaloHud.png',
+    description: 'Dr.V.Angayarkanni and Dr.J.Kalaivani',
     tags: ['Ongoing'],
   },
 
@@ -161,7 +182,7 @@ export default function Projects() {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover hover:scale-110"
+                className="w-full h-48 object-contain justify-center items-center flex mt-4 hover:scale-110"
               />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">

@@ -37,6 +37,20 @@ const teamMembers = [
     image: 'https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/04/Angayarkanni.jpg',
     interests: 'IoT, Embedded Systems',
   },
+  {
+    name: 'Dr. Rama',
+    role: 'Assistant Professor',
+    email: 'ramap@srmist.edu.in',
+    image: 'https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/04/Rama-P.jpg',
+    interests: 'Machine Learning, DeepLearning, Data Science, Artificial Intelligence, Wireless Sensor Networks, Computer Networks, Cloud Computing, Internet of Things, Block Chaining.',
+  },
+  {
+    name: 'Dr. Ashokkumar C',
+    role: 'Assistant Professor',
+    email: 'ashokkuc@srmist.edu.in',
+    image: 'https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/04/Ashok-Kumar.jpg',
+    interests: 'Cloud Computing, Machine Learning and Distributed Computing',
+  },
 ];
 
 export default function About() {
