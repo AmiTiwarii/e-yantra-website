@@ -9,7 +9,7 @@ const projects = [
   {
     title: 'Firebird V: Smart Robotic Waste Management for a Sustainable Future',
     category: 'Completed',
-    image: '../../../public/images/Fire Bird V robot.png',
+    image: '/images/Fire Bird V robot.png',
     description: 'Dr R I Minu, Dr J Kalaivani, Dr.V. Angayarkanni, Dr.M.Suganiya',
     tags: ['Completed'],
   },
