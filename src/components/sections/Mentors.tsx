@@ -31,14 +31,14 @@ const teamMembers = [
     interests: 'IoT, Embedded Systems',
   },
   {
-    name: 'Dr. Angayarkanni',
+    name: 'Dr. Angayarkanni V',
     role: 'Assistant Professor',
     email: 'angayarv@srmist.edu.in',
     image: 'https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/04/Angayarkanni.jpg',
     interests: 'IoT, Embedded Systems',
   },
   {
-    name: 'Dr. Rama',
+    name: 'Dr. Rama P',
     role: 'Assistant Professor',
     email: 'ramap@srmist.edu.in',
     image: 'https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/04/Rama-P.jpg',
