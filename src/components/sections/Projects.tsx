@@ -7,6 +7,13 @@ const projects = [
     tags: ['Completed'],
   },
   {
+    title: 'Firebird V: Smart Robotic Waste Management for a Sustainable Future',
+    category: 'Completed',
+    image: '../../../public/images/Firebird V Smart Robotic Waste Management for a Sustainable Future Completed.jpg',
+    description: 'Dr R I Minu, Dr J Kalaivani, Dr.V. Angayarkanni, Dr.M.Suganiya',
+    tags: ['Completed'],
+  },
+  {
     title: 'Light Automation System with Voice Assistant',
     category: 'Completed',
     image: '/images/Light Automation System Completed.png',
