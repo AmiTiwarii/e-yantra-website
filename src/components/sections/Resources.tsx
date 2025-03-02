@@ -9,23 +9,115 @@ interface LabEquipment {
 
 const equipmentList: LabEquipment[] = [
   {
-    title: 'FIRE BIRD V ATMEGA2560',
-    imageUrl: 'https://www.msmemart.com/upload/products/1588604836059.png',
+    title: 'GY - 87',
+    imageUrl: 'https://uelectronics.com/wp-content/uploads/2018/10/pinout.jpg',
     specifications: [
-      'Based on ATMEGA2560 microcontroller',
-      'Supports high-speed wireless communication',
-      'USB-based data logging and control',
-      'Real-time data monitoring',
+      'The GY-87,3-axis Gyro + 3-axis Acceleration + 3-axis Magnetic Field + Air Pressure Sensor has 3 in one MPU6050 3x Axis accelerometer sensor and 3x Axis gyroscope sensor, HMC5883L Triple Axis Magnetometer, BMP180 Barometric Pressure Sensor.',
+      'It possesses a built-in ultra-low noise linear LDO voltage regulator, built-in onboard filters, which reduce noise from the motor and other high current electronics.',
+      'It has all sensors connected to the I2C bus, you can easily select two I2C addresses for MPU6050 by soldered jumper, power LED, and build in the Logic level converter for I2C.',
     ],
   },
   {
-    title: 'ESP8266 Development Board',
-    imageUrl: 'https://images.unsplash.com/photo-1517055729445-fa7d27394b48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXJkdWlub3xlbnwwfHwwfHx8MA%3D%3D',
+    title: 'TCS 3200 based color sensor module',
+    imageUrl: 'https://th.bing.com/th/id/R.e76099652168c0a8cce58c47ff39ca05?rik=OUAIdk3c7CNI2g&riu=http%3a%2f%2farduinolearning.com%2fwp-content%2fuploads%2f2016%2f07%2ftcs3200.jpg&ehk=ehEwr%2f3IoA8xiPW%2bjD4DWzaXEIpgUSmh2%2b0OkETV6u0%3d&risl=&pid=ImgRaw&r=0',
     specifications: [
-      'Wi-Fi SoC solution based on ESP8266EX',
-      'Compact design and efficient power usage',
-      'Reliable performance for IoT projects',
-      'Supports various Internet of Things (IoT) applications',
+      'The TCS3200 Color Recognition Sensor Module for MCU Arduino uses a high-quality light sensor allowing you to sense any color through a combination of Red, Green, and Blue.',
+      'The module provides all of the pins of the TCS3200 on convenient 0.1" headers ideal for use with PCBs, breadboard or stripboard.',
+      'Four white LEDs provide plenty of light for the color sensor and allow you to use the module in any ambient light.',
+      'The module requires only a single supply voltage between 2.7V and 5.5V',
+    ],
+  },
+  {
+    title: 'ZIGBEE module',
+    imageUrl: 'https://fr.digi.com/products/embedded-systems/digi-xbee/rf-modules/2-4-ghz-rf-modules/xbee-zigbee/product-images/xbee-s2c-zigbee',
+    specifications: [
+      'These modules provide reliable wireless connectivity, making them ideal for building robust and scalable Zigbee networks.',
+      'Whether you are working on home automation, industrial monitoring, or IoT projects, our xBee Zigbee modules offer versatility and compatibility'
+    ],
+  },
+  {
+    title: 'NRF24L01 module',
+    imageUrl: 'https://th.bing.com/th/id/OIP.0OKZBsszVZpbjNsP3__wbQHaGx?rs=1&pid=ImgDetMain',
+    specifications: [
+      'The NRF24L01 is a single-chip transceiver chip operating in the 2.4-2.5GHz world-wide ISM band.',
+      'Low working voltage: 1.9~3.6V low voltage operation.',
+      'Ultra-small: built-in 2.4GHz antenna, small size, 15x 29 mm(including antenna).',
+      'Low power consumption: When working in response mode communication, fast air transmission and startup time greatly reduce current consumption.',
+    ],
+  },
+  {
+    title: 'Metal Gear servo motor',
+    imageUrl: 'https://probots.co.in/pub/media/catalog/product/cache/d8ddd0f9b0cd008b57085cd218b48832/m/g/mg996r.jpg',
+    specifications: [
+      'This is a TowerPro MG946R Digital High Torque Metal Gear Servo Motor.',
+      'TowerPro Servo Motors are suitable for a wide range of applications, including RC aircraft, automobiles, and robotics.',
+    ],
+  },
+  {
+    title: 'Servo Motor',
+    imageUrl: 'https://th.bing.com/th/id/OIP.8SLw0qESHLYDjbERntHQdgHaHa?rs=1&pid=ImgDetMain',
+    specifications: [
+      'MG90s metal gear steering gear(S Version) suitable for 3D flight of 450 and below models',
+    ],
+  },
+  {
+    title: 'Motor Driver Module',
+    imageUrl: 'https://th.bing.com/th/id/OIP.-vAyckSJJMdejN4DuWlSnAHaHa?rs=1&pid=ImgDetMain',
+    specifications: [
+      'Motor Driver is a high power motor driver perfect for driving DC Motors and Stepper Motors',
+      'This motor driver is perfect for driving DC and Stepper motors for micro mouse, line following robots, robot arms,etc.',
+    ],
+  },
+  {
+    title: 'LCD',
+    imageUrl: 'https://2.bp.blogspot.com/-vwfT7d3glV4/X1x11krplXI/AAAAAAAAuSw/Z4MDY7IxLF0Dg1k1YLRg5OCbwnYAKYU8wCK4BGAYYCw/s1600/LCD16x2.jpg',
+    specifications: [
+      'It includes two rows where each row can produce 16-characters',
+      'The operating voltage of this LCD is 4.7V-5.3V',
+      'The utilization of current is 1mA with no backlight',
+      'Every character can be built with a 5×8 pixel box',
+      'The alphanumeric LCDs alphabets & numbers',
+      'Is display can work on two modes like 4-bit & 8-bit',
+    ],
+  },
+  {
+    title: 'QUAD encoder geared DC motor',
+    imageUrl: 'https://th.bing.com/th/id/OIP.yg7NA8LyWWnw2L1zdYimwQHaNN?rs=1&pid=ImgDetMain',
+    specifications: [
+      '200RPM 12V DC geared motors for robotics applications.',
+      'It gives a massive torque of 2.4 Kgcm.',
+      'The motor comes with metal gearbox and off-centered shaft.',
+      'Integrated Quad encoder precise position and speed',
+    ],
+  },
+  {
+    title: '2 - channel relay board',
+    imageUrl: 'https://5.imimg.com/data5/IL/XI/MY-43948449/2-channel-5v-relay-board-1000x1000.jpg',
+    specifications: [
+      'The module using Single relay control.',
+      'AC voltage 250V, AC current 10A, maximum DC voltage 30V DC current maximum 10A.',
+      'Power indicator (green), Two ways of relay status indicator light (red).',
+      'Using 8550 transistor-driven, strong driving ability.',
+      'Has the fixed bolt hole and easy installation.',
+    ],
+  },
+  {
+    title: 'Kinect Sensor',
+    imageUrl: 'https://www.researchgate.net/publication/316560415/figure/fig2/AS:520317886255104@1501064859117/Microsoft-Kinect-sensor.png',
+    specifications: [
+      'Kinect for Xbox 360 was a combination of Microsoft built software and hardware.',
+      'The Kinect sensor is a horizontal bar connected to a small base with a motorized pivot and is designed to be positioned lengthwise above or below the video display.',
+      'The device features an "RGB camera, depth sensor and microphone array running proprietary software", which provide full-body 3D motion capture, facial recognition and voice recognition capabilities',
+    ],
+  },
+  {
+    title: 'Gripper Kit for Fire Bird V Robot',
+    imageUrl: '/images/Fire Bird V robot.png',
+    specifications: [
+      'This is light weight gripper designed for mobile robotics applications.',
+      'It can grip objects with the size up to 30mm. Gripper is made up of Acrylic parts and comes fully assembled and ready to use.',
+      'Gripper comes with two high quality dual bearing NRS-585 Servo motors.',
+      'One of the servo motor is attached for gripping action and the second servo motor is attached for the up and down action.',
     ],
   },
   {
