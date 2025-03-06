@@ -14,17 +14,15 @@ const equipmentList: LabEquipment[] = [
     specifications: [
       'The GY-87,3-axis Gyro + 3-axis Acceleration + 3-axis Magnetic Field + Air Pressure Sensor has 3 in one MPU6050 3x Axis accelerometer sensor and 3x Axis gyroscope sensor, HMC5883L Triple Axis Magnetometer, BMP180 Barometric Pressure Sensor.',
       'It possesses a built-in ultra-low noise linear LDO voltage regulator, built-in onboard filters, which reduce noise from the motor and other high current electronics.',
-      'It has all sensors connected to the I2C bus, you can easily select two I2C addresses for MPU6050 by soldered jumper, power LED, and build in the Logic level converter for I2C.',
     ],
   },
   {
     title: 'TCS 3200 based color sensor module',
-    imageUrl: 'https://th.bing.com/th/id/R.e76099652168c0a8cce58c47ff39ca05?rik=OUAIdk3c7CNI2g&riu=http%3a%2f%2farduinolearning.com%2fwp-content%2fuploads%2f2016%2f07%2ftcs3200.jpg&ehk=ehEwr%2f3IoA8xiPW%2bjD4DWzaXEIpgUSmh2%2b0OkETV6u0%3d&risl=&pid=ImgRaw&r=0',
+    imageUrl: 'https://cdn.shopify.com/s/files/1/0300/6424/6919/files/TCS3200_Color_Sesnor_600x600.jpg?v=1586600315',
     specifications: [
       'The TCS3200 Color Recognition Sensor Module for MCU Arduino uses a high-quality light sensor allowing you to sense any color through a combination of Red, Green, and Blue.',
       'The module provides all of the pins of the TCS3200 on convenient 0.1" headers ideal for use with PCBs, breadboard or stripboard.',
       'Four white LEDs provide plenty of light for the color sensor and allow you to use the module in any ambient light.',
-      'The module requires only a single supply voltage between 2.7V and 5.5V',
     ],
   },
   {
@@ -42,7 +40,7 @@ const equipmentList: LabEquipment[] = [
       'The NRF24L01 is a single-chip transceiver chip operating in the 2.4-2.5GHz world-wide ISM band.',
       'Low working voltage: 1.9~3.6V low voltage operation.',
       'Ultra-small: built-in 2.4GHz antenna, small size, 15x 29 mm(including antenna).',
-      'Low power consumption: When working in response mode communication, fast air transmission and startup time greatly reduce current consumption.',
+      'Low power consumption: When working in response mode communication.'
     ],
   },
   {
@@ -57,6 +55,7 @@ const equipmentList: LabEquipment[] = [
     title: 'Servo Motor',
     imageUrl: 'https://th.bing.com/th/id/OIP.8SLw0qESHLYDjbERntHQdgHaHa?rs=1&pid=ImgDetMain',
     specifications: [
+      'A servomotor is a rotary or linear actuator that allows for precise control of angular or linear position, velocity, and acceleration in a mechanical system',
       'MG90s metal gear steering gear(S Version) suitable for 3D flight of 450 and below models',
     ],
   },
