@@ -78,6 +78,7 @@ type VantaEffect = {
 
 export default function Events() {
   const [vantaEffect, setVantaEffect] = useState<VantaEffect | null>(null)
+  const [currentSlide, setCurrentSlide] = useState(0)
   const vantaRef = useRef(null)
 
   useEffect(() => {
@@ -102,6 +103,23 @@ export default function Events() {
     }
   }, [vantaEffect])
 
+  const nextSlide = () => {
+    setCurrentSlide((prev) => {
+      // For desktop: show 3 cards, tablet: 2 cards, mobile: 1 card
+      const visibleCards = window.innerWidth >= 1024 ? 2 : window.innerWidth >= 640 ? 2 : 1;
+      const maxSlide = events.length - visibleCards;
+      return prev >= maxSlide ? 0 : prev + 1;
+    });
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => {
+      const visibleCards = window.innerWidth >= 1024 ? 2 : window.innerWidth >= 640 ? 2 : 1;
+      const maxSlide = events.length - visibleCards;
+      return prev <= 0 ? maxSlide : prev - 1;
+    });
+  };
+
   return (
     <section ref={vantaRef} id="events" className="relative py-10 sm:py-16 md:py-20 min-h-screen">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -112,44 +130,77 @@ export default function Events() {
           </p>
         </div>
         <Link to={`/gallery`}>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {events.map((event, index) => (
-              <div
-                key={index}
-                className={`rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow bg-white/90 backdrop-blur-sm ${
-                  event.status === "upcoming" ? "border-2 border-blue-600" : "border-2 border-green-400"
-                }`}
+          <div className="relative">
+            <button
+              onClick={(e) => { e.preventDefault(); prevSlide(); }}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow-md hover:bg-white"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={(e) => { e.preventDefault(); nextSlide(); }}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow-md hover:bg-white"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-300 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 33.333}%)` }}
               >
-                <div className="p-4 sm:p-6">
-                  {event.status === "upcoming" ? (
-                    <span className="inline-block px-2 sm:px-3 py-1 bg-blue-100 text-blue-600 text-xs sm:text-sm rounded-full mb-2 sm:mb-4">
-                      Upcoming
-                    </span>
-                  ) : (
-                    <span className="inline-block px-2 sm:px-3 py-1 bg-orange-400 text-blue-600 text-xs sm:text-sm rounded-full mb-2 sm:mb-4">
-                      Completed
-                    </span>
-                  )}
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-4">{event.title}</h3>
-                  <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-600">
-                    <div className="flex items-center gap-2">
-                      <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
-                      <span>{event.date}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
-                      <span>{event.time}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
-                      <span>{event.location}</span>
+                {events.map((event, index) => (
+                  <div
+                    key={index}
+                    className="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-3"
+                  >
+                    <div 
+                      className={`
+                        rounded-lg overflow-hidden shadow-md hover:shadow-lg 
+                        transition-all duration-300 ease-in-out bg-white/90 backdrop-blur-sm 
+                        ${event.status === "upcoming" ? "border-2 border-blue-600" : "border-2 border-green-400"}
+                        ${index === currentSlide + 1 ? 'transform scale-105 z-10' : 'scale-90 opacity-80'}
+                        h-full
+                      `}
+                    >
+                      <div className="p-4 sm:p-6 flex flex-col h-96">
+                        <div className="mb-4">
+                          {event.status === "upcoming" ? (
+                            <span className="inline-block px-2 sm:px-3 py-1 bg-blue-100 text-blue-600 text-xs sm:text-sm rounded-full mb-2">
+                              Upcoming
+                            </span>
+                          ) : (
+                            <span className="inline-block px-2 sm:px-3 py-1 bg-orange-400 text-blue-600 text-xs sm:text-sm rounded-full mb-2">
+                              Completed
+                            </span>
+                          )}
+                          <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{event.title}</h3>
+                        </div>
+                        
+                        <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-600 flex-grow">
+                          <div className="flex items-center gap-2">
+                            <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 flex-shrink-0" />
+                            <span>{event.date}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 flex-shrink-0" />
+                            <span>{event.time}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 flex-shrink-0" />
+                            <span className="line-clamp-1">{event.location}</span>
+                          </div>
+                          <p className="mt-3 text-sm sm:text-base text-gray-600 line-clamp-3">{event.description}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-600">{event.description}</p>
-                  
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </Link>
       </div>
