@@ -16,7 +16,6 @@ const events = [
       "/images/Twin Tech Phantom Project.png",
       "/images/Twin Tech Route aligner Project.png",
       "/images/Twin Tech Route aligner Project.png",
-      "/images/Twin Tech ValkariyeProject",
       "/gallery/Twin Tech/DSC00511.JPG",
       "/gallery/Twin Tech/DSC00432.JPG",
       "/gallery/Twin Tech/DSC00435.JPG",
@@ -169,7 +168,7 @@ const events = [
     ],
   },
   {
-    name: "Meta-Verse",
+    name: "Intrduction to Meta-Verse course 2024",
     logo: "/gallery/MetaVerse/mv1.jpeg",
     photos: [
       "/gallery/MetaVerse/mv1.jpeg",

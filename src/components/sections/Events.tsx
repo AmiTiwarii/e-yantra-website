@@ -2,31 +2,72 @@ import { useEffect, useRef, useState } from "react"
 import { Calendar, MapPin, Clock } from "lucide-react"
 import * as THREE from "three"
 import RINGS from "vanta/dist/vanta.rings.min"
+import { Link } from "react-router-dom"
 
 const events = [
   {
-    title: "Robotics Workshop 2024",
-    date: "March 15, 2024",
-    location: "Main Lab, Building A",
-    time: "10:00 AM - 4:00 PM",
-    description: "Hands-on workshop covering fundamentals of robotics and automation.",
-    status: "upcoming",
+    title: "Twin Tech",
+    date: "May 3, 2024",
+    location: "University Building",
+    time: "09:00 AM - 4:00 PM",
+    description: "Twin Tech Expo - Project Demonstration and Presentation.",
+    status: "completed",
   },
   {
-    title: "AI in Robotics Conference",
-    date: "April 5, 2024",
-    location: "Virtual Event",
-    time: "9:00 AM - 5:00 PM",
-    description: "International conference on the latest developments in AI and robotics.",
-    status: "upcoming",
+    title: "Special Lecture by Dr. Claire A Nelson",
+    date: "February 24, 2024",
+    location: "Imac Lab, Tech Park 14th floor",
+    time: "10:00 AM - 12:00 PM",
+    description: "Engendering smart futures for a flourishing world: Engineering sustainability.",
+    status: "completed",
   },
   {
-    title: "Innovation Hackathon",
+    title: "Eyantra Hackathon'24",
     date: "February 10, 2024",
     location: "Innovation Hub",
     time: "9:00 AM - 6:00 PM",
     description: "24-hour hackathon focused on solving real-world robotics challenges.",
-    status: "past",
+    status: "completed",
+  },
+  {
+    title: "eYRTC_24-Teachers competition",
+    date: "February 10, 2024",
+    location: "Innovation Hub",
+    time: "9:00 AM - 6:00 PM",
+    description: "24-hour hackathon focused on solving real-world robotics challenges.",
+    status: "completed",
+  },
+  {
+    title: "Workshop on Digital Twin'24",
+    date: "October 23, 2024",
+    location: "Tech Park 401/402",
+    time: "9:00 AM - 5:00 PM",
+    description: "Hands on experience on Digital Twin.",
+    status: "completed",
+  },
+  {
+    title: "Workshop on IIOT'24",
+    date: "August 07, 2024",
+    location: "Tech Park 401/402",
+    time: "9:00 AM - 3:00 PM",
+    description: "Hands on experience on IIOT.",
+    status: "completed",
+  },
+  {
+    title: "Eyantra Symposium'24",
+    date: "August 05 & 06, 2024",
+    location: "IIT Bombay",
+    time: "9:00 AM - 5:00 PM",
+    description: "Eyantra Symposium at IIT Bombay for recognition of top A-rated colleges.",
+    status: "completed",
+  },
+  {
+    title: "Introduction to meta verse course'24",
+    date: "June 04, 2024",
+    location: "Imac Lab, Tech Park 14th floor",
+    time: "9:00 AM - 5:00 PM",
+    description: "Introduction to meta verse course 2024 edition.",
+    status: "completed",
   },
 ]
 
@@ -70,49 +111,47 @@ export default function Events() {
             Join us for exciting events and hands-on workshops to enhance your skills and network with industry experts.
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {events.map((event, index) => (
-            <div
-              key={index}
-              className={`rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow bg-white/90 backdrop-blur-sm ${
-                event.status === "upcoming" ? "border-2 border-blue-600" : "border-2 border-green-400"
-              }`}
-            >
-              <div className="p-4 sm:p-6">
-                {event.status === "upcoming" ? (
-                  <span className="inline-block px-2 sm:px-3 py-1 bg-blue-100 text-blue-600 text-xs sm:text-sm rounded-full mb-2 sm:mb-4">
-                    Upcoming
-                  </span>
-                ) : (
-                  <span className="inline-block px-2 sm:px-3 py-1 bg-blue-100 text-blue-600 text-xs sm:text-sm rounded-full mb-2 sm:mb-4">
-                    Completed
-                  </span>
-                )}
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-4">{event.title}</h3>
-                <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-600">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
-                    <span>{event.date}</span>
+        <Link to={`/gallery`}>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {events.map((event, index) => (
+              <div
+                key={index}
+                className={`rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow bg-white/90 backdrop-blur-sm ${
+                  event.status === "upcoming" ? "border-2 border-blue-600" : "border-2 border-green-400"
+                }`}
+              >
+                <div className="p-4 sm:p-6">
+                  {event.status === "upcoming" ? (
+                    <span className="inline-block px-2 sm:px-3 py-1 bg-blue-100 text-blue-600 text-xs sm:text-sm rounded-full mb-2 sm:mb-4">
+                      Upcoming
+                    </span>
+                  ) : (
+                    <span className="inline-block px-2 sm:px-3 py-1 bg-orange-400 text-blue-600 text-xs sm:text-sm rounded-full mb-2 sm:mb-4">
+                      Completed
+                    </span>
+                  )}
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-4">{event.title}</h3>
+                  <div className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
+                      <span>{event.time}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
+                      <span>{event.location}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
-                    <span>{event.location}</span>
-                  </div>
+                  <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-600">{event.description}</p>
+                  
                 </div>
-                <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-600">{event.description}</p>
-                {event.status === "upcoming" && (
-                  <button className="mt-4 sm:mt-6 w-full px-4 py-2 bg-blue-600 text-white text-sm sm:text-base rounded-lg hover:bg-blue-700 transition-colors">
-                    Register Now
-                  </button>
-                )}
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Link>
       </div>
     </section>
   )
