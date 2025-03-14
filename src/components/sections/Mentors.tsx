@@ -31,25 +31,17 @@ const labincharge = [
 const programmers = [
   
   {
-    name: "Dr. Rama P",
+    name: "Ms. Parkkavi.V",
     role: "Assistant Professor",
-    email: "ramap@srmist.edu.in",
-    image: "https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/04/Rama-P.jpg",
-    interests:
-      "Machine Learning, DeepLearning, Data Science, Artificial Intelligence, Wireless Sensor Networks, Computer Networks, Cloud Computing, Internet of Things, Block Chaining.",
+    email: "Parkkavv@srmist.edu.in",
+    image: "/images/Mr.PakkaviV.jpg",
+    interests: "",
   },
   
 ]
 
 // Other lab members
 const labMembers = [
-  {
-    name: "Dr. M. Suganiya",
-    role: "Assistant Professor",
-    email: "suganiym@srmist.edu",
-    image: "https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/05/suganiya.jpg",
-    interests: "IoT, Embedded Systems",
-  },
   {
     name: "Dr. Bakkialakshmi V S",
     role: "Assistant Professor",
@@ -63,6 +55,21 @@ const labMembers = [
     email: "ashokkuc@srmist.edu.in",
     image: "https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/04/Ashok-Kumar.jpg",
     interests: "Cloud Computing, Machine Learning and Distributed Computing",
+  },
+  {
+    name: "Dr. Rama P",
+    role: "Assistant Professor",
+    email: "ramap@srmist.edu.in",
+    image: "https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/04/Rama-P.jpg",
+    interests:
+      "Machine Learning, DeepLearning, Data Science, Artificial Intelligence, Wireless Sensor Networks, Computer Networks, Cloud Computing, Internet of Things, Block Chaining.",
+  },
+  {
+    name: "Dr. M. Suganiya",
+    role: "Assistant Professor",
+    email: "suganiym@srmist.edu",
+    image: "https://d23qowwaqkh3fj.cloudfront.net/wp-content/uploads/2024/05/suganiya.jpg",
+    interests: "IoT, Embedded Systems",
   },
   
   
