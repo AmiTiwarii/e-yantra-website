@@ -42,6 +42,27 @@ const projects = [
     tags: ['Completed'],
   },
   {
+    title: 'RESCUE TWIN',
+    category: 'Ongoing',
+    image: '/images/rescueTwin1.png',
+    description: 'Dr.R.I.Minu, Dr.V.Angayarkanni',
+    tags: ['Ongoing'],
+  },
+  {
+    title: 'AFFORDABLE PROSTHETIC SOLUTION FOR ARM AMPUTEES',
+    category: 'Ongoing',
+    image: '/images/Prosthetichand.png',
+    description: 'Dr.V.Angayarkanni',
+    tags: ['Ongoing'],
+  },
+  {
+    title: 'HALOHUD',
+    category: 'Ongoing',
+    image: '/images/HALOHUD1.png',
+    description: 'Dr.R.I.Minu, Dr.V.Angayarkanni',
+    tags: ['Ongoing'],
+  },
+  {
     title: 'Hydroblaze - Automated Fire Extinguiser system',
     category: 'Completed',
     image: '/images/Twin Tech Hydroblaze Project.png',
